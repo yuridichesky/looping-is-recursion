@@ -1,10 +1,12 @@
 (ns looping-is-recursion)
 
 (defn power [base exp]
-  ":(")
+  (loop [res 1 e exp]
+    (if (zero? e) res
+      (recur (* res base) (dec e)))))
 
 (defn last-element [a-seq]
-  ":(")
+  (reduce (fn [_ e] e) nil a-seq))
 
 (defn seq= [seq1 seq2]
   ":(")
